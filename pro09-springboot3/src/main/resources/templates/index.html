@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/static/css/style.css}">
+    <meta charset="UTF-8">
+    <title>文件提交</title>
+    <script th:src="@{/static/js/index.js}"></script>
+</head>
+<body>
+<div class="logo-container">
+    <img th:src="@{static/imgs/logo.png}" alt="logo">
+    <h1>文集掌控</h1>
+</div>
+<form th:action="@{/homework}" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+    <label for="submitter">姓名:</label>
+    <input type="text" id="submitter" name="submitter"><br><br>
+    <label for="file-upload">上传:</label>
+    <input type="file" id="file-upload" name="fileSubmit"><br><br>
+    <div class="button-container">
+        <input type="submit" value="提交">
+        <div id="loading-circle"></div>
+    </div>
+</form>
+</body>
+</html>
